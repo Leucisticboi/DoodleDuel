@@ -1,0 +1,19 @@
+header {
+    background-image: url();
+    background-size: cover;
+    color: white;
+    padding: 0px;
+    text-align: right;
+    max-height: 100px;
+    margin: 0 auto;
+  }
+
+  main {
+    background-image: url('../graphics/Calm\ Background.jpeg');
+    background-size: cover;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 20px;
+    min-height: 100vh
+  }
