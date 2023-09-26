@@ -1,4 +1,38 @@
 @import url("https://fonts.googleapis.com/css?family=Corben:700");
+header {
+  background-color: #2f4833;
+  color: white;
+  padding: 10px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.user-profile button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#loginForm {
+  margin-top: 10px;
+  display: none;
+}
+
+#loginForm form {
+  text-align: right;
+}
+
+#loginForm form input[type="text"],
+#loginForm form input[type="password"],
+#loginForm form button {
+  display: block;
+  margin: 5px 0;
+  padding: 5px;
+  width: 200px;
+}
 h1 {
   font-family: "Corben", cursive;
   font-size: 6rem;
@@ -8,13 +42,13 @@ h1 {
 }
 
 .hero {
-  background-image: radial-gradient(50% 176%, #253854 80%, #061922 100%);
-  min-height: 30rem;
+  background-image: radial-gradient(50% 176%, #3a5b3f 80%, #000000 100%);
+  min-height: 100vh; 
   position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center; 
 }
 .hero__content {
   position: relative;
@@ -50,10 +84,104 @@ h1 {
   animation: fall 45s infinite linear;
 }
 
+.button-container {
+  text-align: center; 
+  margin-top: 20px;
+  margin: 5px 10px
+}
+
+.button-duel {
+  align-self: center;
+  margin: 0 10px;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-duel:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button-duel:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+.button-duel:active {
+  background-color: #7b7b7b;
+}
+
+.button-vote {
+  align-self: center;
+  margin: 0 10px;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-vote:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button-vote:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+.button-vote:active {
+  background-color: #7b7b7b;
+}
+
 @keyframes fall {
   100% {
     transform: translateY(0);
   }
 }
-
-/*# sourceMappingURL=style.css.map */
