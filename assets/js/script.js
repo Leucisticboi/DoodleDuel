@@ -10,6 +10,7 @@ function handleDuelButtonClick() {
 
     // Create and display a box in the middle of the screen
     const box = document.createElement('div');
+    box.className = 'box'; // Assign the class "box" to the element
     box.style.width = '300px';
     box.style.height = '300px';
     box.style.backgroundColor = '#f0f0f0'; // Customize the box's appearance
@@ -21,12 +22,17 @@ function handleDuelButtonClick() {
 
     // Create and display a countdown timer in the top left corner
     const timer = document.createElement('div');
+    timer.className = 'timer'; // Assign the class "timer" to the element
     timer.style.position = 'absolute';
     timer.style.top = '20px';
     timer.style.left = '20px';
     timer.style.fontSize = '20px';
     timer.style.color = 'white';
     document.body.appendChild(timer);
+
+    // Display the submit button
+    const submitButtonContainer = document.querySelector('.submit-container');
+    submitButtonContainer.style.display = 'block';
 
     let countdownMinutes = 20;
     let countdownSeconds = 0;
@@ -50,6 +56,29 @@ function handleDuelButtonClick() {
 }
 
 document.querySelector('#duelButton').addEventListener('click', handleDuelButtonClick);
+
+// Event listener for the submit button
+document.querySelector('#submitDrawingButton').addEventListener('click', function () {
+    // Save the user's drawing (implement your logic here)
+    
+    // Hide everything and show hero content again
+    const heroContent = document.querySelector('.hero__content');
+    heroContent.style.display = 'block';
+
+    const promptParagraph = document.getElementById('promptParagraph');
+    promptParagraph.style.display = 'none';
+
+    // Select and hide the box with the class "box"
+    const box = document.querySelector('.box');
+    box.style.display = 'none';
+
+    // Select and hide the timer with the class "timer"
+    const timer = document.querySelector('.timer');
+    timer.style.display = 'none';
+
+    const submitButtonContainer = document.querySelector('.submit-container');
+    submitButtonContainer.style.display = 'none';
+});
 
 // Function to toggle the display of the login form
 function toggleLoginForm() {
