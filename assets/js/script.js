@@ -1,3 +1,6 @@
+let box = null;
+let timer = null;
+
 // Function to handle the "Duel" button click
 function handleDuelButtonClick() {
     // Hide the "Doodle Duel" text
@@ -8,27 +11,35 @@ function handleDuelButtonClick() {
     const promptParagraph = document.getElementById('promptParagraph');
     promptParagraph.style.display = 'block';
 
-    // Create and display a box in the middle of the screen
-    const box = document.createElement('div');
-    box.className = 'box'; 
-    box.style.width = '300px';
-    box.style.height = '300px';
-    box.style.backgroundColor = '#f0f0f0'; 
-    box.style.position = 'absolute';
-    box.style.top = '50%';
-    box.style.left = '50%';
-    box.style.transform = 'translate(-50%, -50%)';
-    document.body.appendChild(box);
+    // Create and display the box if it doesn't exist
+    if (!box) {
+        box = document.createElement('div');
+        box.className = 'box'; 
+        box.style.width = '300px';
+        box.style.height = '300px';
+        box.style.backgroundColor = '#f0f0f0'; 
+        box.style.position = 'absolute';
+        box.style.top = '50%';
+        box.style.left = '50%';
+        box.style.transform = 'translate(-50%, -50%)';
+        document.body.appendChild(box);
+    } else {
+        box.style.display = 'block';
+    }
 
-    // Create and display a countdown timer in the top left corner
-    const timer = document.createElement('div');
-    timer.className = 'timer'; 
-    timer.style.position = 'absolute';
-    timer.style.top = '20px';
-    timer.style.left = '20px';
-    timer.style.fontSize = '20px';
-    timer.style.color = 'white';
-    document.body.appendChild(timer);
+    // Create and display the timer if it doesn't exist
+    if (!timer) {
+        timer = document.createElement('div');
+        timer.className = 'timer'; 
+        timer.style.position = 'absolute';
+        timer.style.top = '20px';
+        timer.style.left = '20px';
+        timer.style.fontSize = '20px';
+        timer.style.color = 'white';
+        document.body.appendChild(timer);
+    } else {
+        timer.style.display = 'block';
+    }
 
     // Display the submit button
     const submitButtonContainer = document.querySelector('.submit-container');
@@ -60,18 +71,20 @@ document.querySelector('#duelButton').addEventListener('click', handleDuelButton
 document.querySelector('#submitDrawingButton').addEventListener('click', function () {
     // Save the user's drawing (implement your logic here)
     
-    // Hide everything and show hero content again
+    if (box) {
+        box.style.display = 'none';
+    }
+
+    if (timer) {
+        timer.style.display = 'none';
+    }
+
+    // Hide everything else and show hero content again
     const heroContent = document.querySelector('.hero__content');
     heroContent.style.display = 'block';
 
     const promptParagraph = document.getElementById('promptParagraph');
     promptParagraph.style.display = 'none';
-
-    const box = document.querySelector('.box');
-    box.style.display = 'none';
-
-    const timer = document.querySelector('.timer');
-    timer.style.display = 'none';
 
     const submitButtonContainer = document.querySelector('.submit-container');
     submitButtonContainer.style.display = 'none';
