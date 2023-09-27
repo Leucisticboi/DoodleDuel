@@ -10,10 +10,10 @@ function handleDuelButtonClick() {
 
     // Create and display a box in the middle of the screen
     const box = document.createElement('div');
-    box.className = 'box'; // Assign the class "box" to the element
+    box.className = 'box'; 
     box.style.width = '300px';
     box.style.height = '300px';
-    box.style.backgroundColor = '#f0f0f0'; // Customize the box's appearance
+    box.style.backgroundColor = '#f0f0f0'; 
     box.style.position = 'absolute';
     box.style.top = '50%';
     box.style.left = '50%';
@@ -22,7 +22,7 @@ function handleDuelButtonClick() {
 
     // Create and display a countdown timer in the top left corner
     const timer = document.createElement('div');
-    timer.className = 'timer'; // Assign the class "timer" to the element
+    timer.className = 'timer'; 
     timer.style.position = 'absolute';
     timer.style.top = '20px';
     timer.style.left = '20px';
@@ -49,7 +49,6 @@ function handleDuelButtonClick() {
                 countdownSeconds--;
             }
 
-            // Display the countdown timer in the format "MM:SS"
             timer.textContent = `Time left: ${countdownMinutes.toString().padStart(2, '0')}:${countdownSeconds.toString().padStart(2, '0')}`;
         }
     }, 1000);
@@ -68,11 +67,9 @@ document.querySelector('#submitDrawingButton').addEventListener('click', functio
     const promptParagraph = document.getElementById('promptParagraph');
     promptParagraph.style.display = 'none';
 
-    // Select and hide the box with the class "box"
     const box = document.querySelector('.box');
     box.style.display = 'none';
 
-    // Select and hide the timer with the class "timer"
     const timer = document.querySelector('.timer');
     timer.style.display = 'none';
 
@@ -101,9 +98,9 @@ function performSignIn() {
 
     setTimeout(() => {
         userIsSignedIn = true;
-        userFirstName = "John"; // Replace with the user's actual first name
+        userFirstName = "John"; 
         checkSignInStatus();
-        toggleLoginForm(); // Hide the login form after successful sign-in
+        toggleLoginForm(); 
     }, 1000);
 
     return false;
@@ -115,6 +112,5 @@ function playScribbleSound() {
   scribbleAudio.play();
 }
 
-// Add an event listener to your buttons to trigger the sound
 document.querySelector(".button-duel").addEventListener("click", playScribbleSound);
 document.querySelector(".button-vote").addEventListener("click", playScribbleSound);
