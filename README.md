@@ -37,3 +37,4 @@ To get started with Doodle Duel, follow these steps:
 
 
 ## Contributions/References
+Special thanks to Javascriptacademy for help with the drawing tool. https://codepen.io/javascriptacademy-stash/pen/porpeoJ
