@@ -2,6 +2,7 @@ const User = require('./User');
 const Stats = require('./Stats');
 const Prompt = require('./Prompts');
 const Doodle = require('./Doodles');
+const Vote = require('.Votes.js');
 
 User.hasMany(Stats, {
     foreignKey: 'username',
@@ -24,6 +25,14 @@ User.hasMany(Doodle, {
 });
 
 Doodle.belongsTo(User, {
+    foreignKey: 'username',
+});
+
+Prompt.hasMany(Vote, {
+    foreignKey: 'username',
+});
+
+Vote.belongsTo(Prompt, {
     foreignKey: 'username',
 });
 
