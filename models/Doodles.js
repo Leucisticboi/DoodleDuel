@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const Prompt = require('./Prompts');
 
 class Doodle extends Model {}
 
@@ -15,6 +16,10 @@ Doodle.init(
     prompt_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        references: {
+          model: Prompt,
+          key: 'id'
+      }
     },
     file_ref: {
         type: DataTypes.STRING,

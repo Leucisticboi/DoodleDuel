@@ -37,7 +37,7 @@ Prompt.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'prompts',
+    modelName: 'Prompt',
   }
 );
 
