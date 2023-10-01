@@ -4,6 +4,7 @@ const { User } = require('../../models');
 //new user
 router.post('/signup', async (req, res) => {
     console.log('hit');
+
     try {
         if(req.body.password !== req.body.confirmPassword) {
             res.status(400).json({ message: 'Confirmed password did not match password.'})
@@ -59,6 +60,6 @@ router.post('/logout', (req, res) => {
     } else {
         res.status(404).end();
     }
-})
+});
 
 module.exports = router;

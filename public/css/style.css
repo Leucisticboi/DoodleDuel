@@ -232,6 +232,31 @@ h1 {
   touch-action: manipulation;
 }
 
+nav a {
+  text-decoration: none;
+}
+
+nav {
+  background-color: #15380a;
+  font-weight: bold;
+}
+
+nav li {
+  display: inline; 
+  margin-right: 20px; 
+}
+
+nav a {
+  color: #fff; 
+  padding: 10px 15px; 
+  transition: background-color 0.3s ease; 
+}
+
+nav a:hover {
+  background-color: #555; 
+  border-radius: 5px;
+}
+
 @keyframes fall {
   100% {
     transform: translateY(0);
