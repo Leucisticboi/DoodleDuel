@@ -3,25 +3,21 @@ const { User } = require('../../models');
 
 //new user
 router.post('/signup', async (req, res) => {
+    console.log('hit');
+
     try {
         if(req.body.password !== req.body.confirmPassword) {
             res.status(400).json({ message: 'Confirmed password did not match password.'})
             return;
         }
-        
-        const newUserData = {
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password
-        }
 
-        await User.create(newUserData);
+        const userData = await User.create(req.body);
 
         req.session.save(() => {
-            req.session.user_id = newUserData.username;
+            req.session.user_id = userData.username;
             req.session.logged_in = true;
 
-            res.status(200).json(newUserData);
+            res.status(200).json(userData);
         });
     } catch (err) {
         res.status(400).json(err);
