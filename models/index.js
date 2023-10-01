@@ -2,7 +2,7 @@ const User = require('./User');
 const Stats = require('./Stats');
 const Prompt = require('./Prompts');
 const Doodle = require('./Doodles');
-const Vote = require('.Votes.js');
+const Vote = require('./Vote.js');
 
 User.hasMany(Stats, {
     foreignKey: 'username',
@@ -36,4 +36,4 @@ Vote.belongsTo(Prompt, {
     foreignKey: 'username',
 });
 
-module.exports = { User, Stats, Prompt, Doodle };
+module.exports = { User, Stats, Prompt, Doodle, Vote };

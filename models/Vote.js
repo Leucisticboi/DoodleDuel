@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const User = require('./User');
+const Prompt = require('./Prompts');
 
 class Vote extends Model {}
 
@@ -19,7 +20,7 @@ Vote.init(
             unique: true,
             references: {
                 model: User,
-                key: username
+                key: 'username'
             }
         },
         prompt_id: {
@@ -27,7 +28,7 @@ Vote.init(
             allowNull: false,
             references: {
                 model: Prompt,
-                key: id
+                key: 'id'
             }
         },
         player_vote: {
