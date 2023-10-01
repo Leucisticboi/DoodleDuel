@@ -1,6 +1,7 @@
 let box = null;
 let timer = null;
 
+/*
 // Function to handle the "Duel" button click
 function handleDuelButtonClick() {
     // Hide the "Doodle Duel" text
@@ -64,6 +65,7 @@ function handleDuelButtonClick() {
         }
     }, 1000);
 }
+*/
 
 document.querySelector('#duelButton').addEventListener('click', handleDuelButtonClick);
 
