@@ -19,6 +19,7 @@
     "express-session": "^1.17.1",
     "mysql2": "^3.6.1",
     "npm": "^10.1.0",
-    "sequelize": "^6.33.0"
+    "sequelize": "^6.33.0",
+    "sequelize-cli": "^6.6.1"
   }
 }
