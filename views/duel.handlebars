@@ -1,6 +1,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="/css/styleDuel.css" />
+    <audio id="scribbleAudio" src="scribble.mp3" preload="auto"></audio>
 </head>
 
 <body>
@@ -20,5 +21,10 @@
     </section>
     <script src="/js/scriptDuel.js"></script>
 </body>
-
+<script>
+    function playScribbleSound() {
+        const scribbleAudio = document.getElementById('scribbleAudio');
+        scribbleAudio.play();
+    }
+</script>
 </html>
