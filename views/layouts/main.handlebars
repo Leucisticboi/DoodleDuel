@@ -28,7 +28,10 @@
     <main>
         {{{body}}}
     </main>
-    <script src="../../public/js/logout.js"></script>
+    
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 
 </body>
 
