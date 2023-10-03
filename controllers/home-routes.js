@@ -35,15 +35,21 @@ router.get('/signup', (req, res) => {
 });
 
 //vote
-router.get('/vote/:id', async (req, res) => {
+router.get('/vote/:id', withAuth, async (req, res) => {
     try {
         const promptData = await Prompt.findByPk(req.params.id);
         if(!promptData) {
-            res.status(404).json({message: 'No dish with this id!'});
+            res.status(404).json({message: 'No prompt with this id!'});
             return;
         }
         const prompt = promptData.get({ plain : true });
-        res.render('prompt', {prompt, loggedIn: req.session.loggedIn, user: req.user});
+        res.render('prompt', {
+            prompt, 
+            layout: 'main', 
+            logged_in: req.session.logged_in, 
+            user: req.user, 
+            user_id: req.session.user_id,
+        });
       
         console.log("req.user:", req.user);
     } catch (error) {

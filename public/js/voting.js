@@ -1,6 +1,6 @@
-async function voteP1(id, username){
+function voteP1(id, username){
     const vote = {"username":username,"prompt_id":id,"player_vote":1};
-    const response = await fetch(`/api/dish`, {
+    const response = fetch(`/api/vote`, {
         method: 'POST',
         body: JSON.stringify(vote),
         headers: {
@@ -13,9 +13,9 @@ async function voteP1(id, username){
         alert('you already voted');
     }
 };
-async function voteP2(id, username){
-    const vote = {"username":username,"prompt_id":id,"player_vote":2};
-    const response = await fetch(`/api/dish`, {
+function voteP2(id){
+    const vote = {"username":"bobby","prompt_id":id,"player_vote":2};
+    const response = fetch(`/api/vote`, {
         method: 'POST',
         body: JSON.stringify(vote),
         headers: {
@@ -29,5 +29,5 @@ async function voteP2(id, username){
     }
 };
 
-document.getElementById("voteP1Button").addEventListener("click", voteP1());
-document.getElementById("voteP2Button").addEventListener("click", voteP2());
+document.getElementById("voteP1Button").onclick = voteP1;
+document.getElementById("voteP2Button").onclick = voteP2;
