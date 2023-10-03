@@ -35,6 +35,9 @@ const draw = (e) => {
         return;
     }
 
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
     ctx.lineWidth = lineWidth;
     ctx.lineCap = 'round';
 
@@ -62,9 +65,26 @@ canvas.addEventListener('mousemove', draw);
 const saveButton = document.getElementById('save');
 
 saveButton.addEventListener('click', () => {
+    console.log('CLICKED MF');
     const imageDataUrl = canvas.toDataURL(); 
-    const link = document.createElement('a'); 
-    link.href = imageDataUrl; 
-    link.download = 'drawing.png'; 
-    link.click();
+    const promptId = 69;
+
+    fetch('/api/saveImage', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ imageDataUrl, promptId  }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            console.log(response);
+            throw new Error('Network response was not ok');
+        }
+        return response.blob();
+    })
+    .then(blob => {
+        console.log('Image saved on the server!');
+    })
+    .catch(error => console.error('Error:', error));
 });
