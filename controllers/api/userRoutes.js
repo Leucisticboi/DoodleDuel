@@ -3,8 +3,6 @@ const { User } = require('../../models');
 
 //new user
 router.post('/signup', async (req, res) => {
-    console.log('hit');
-
     try {
         if(req.body.password !== req.body.confirmPassword) {
             res.status(400).json({ message: 'Confirmed password did not match password.'})
@@ -25,6 +23,7 @@ router.post('/signup', async (req, res) => {
 })
 
 router.post('/login', async (req, res) => {
+    console.log('hit /api/user/login');
     try {
         const userData = await User.findOne({ where: { email: req.body.email } });
 
@@ -53,6 +52,7 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
+    console.log('logged out')
     if (req.session.logged_in) {
         req.session.destroy(() => {
             res.status(204).end();
