@@ -1,23 +1,31 @@
-const Vote = require('../../controllers/api/voteRoutes');
-
 async function voteP1(id, username){
-    try {
-        response = await Vote.post({ headers: {'content-type' : 'application/json'}, url: 'http://localhost:3001/api/vote/', body: {"username":username,"id":id,"player_vote":1}}, function(error, response, body){
-            console.log(body);
-            console.log(response);
-        });
-    } catch (error){
-        console.log(error);
+    const vote = {"username":username,"prompt_id":id,"player_vote":1};
+    const response = await fetch(`/api/dish`, {
+        method: 'POST',
+        body: JSON.stringify(vote),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+    if (response.ok) {
+        document.location.replace('/vote');
+    } else {
+        alert('you already voted');
     }
 };
 async function voteP2(id, username){
-    try {
-        response = await Vote.post({ headers: {'content-type' : 'application/json'}, url: 'http://localhost:3001/api/vote/', body: {"username":username,"id":id,"player_vote":2}}, function(error, response, body){
-            console.log(body);
-            console.log(response);
-        });
-    } catch (error){
-        console.log(error);
+    const vote = {"username":username,"prompt_id":id,"player_vote":2};
+    const response = await fetch(`/api/dish`, {
+        method: 'POST',
+        body: JSON.stringify(vote),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+    if (response.ok) {
+        document.location.replace('/vote');
+    } else {
+        alert('you already voted');
     }
 };
 
