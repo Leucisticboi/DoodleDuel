@@ -34,21 +34,7 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-//duel
-router.get('/duel', withAuth, async (req, res) => {
-    try {
-        res.render('duel', {
-            layout: 'main', // Specify the layout here
-            logged_in: req.session.logged_in,
-            user: req.user,
-        });
-        console.log("req.user:", req.user);
-    } catch (error) {
-        console.error('Error fetching prompts:', error);
-        res.status(500).send('Internal Server Error');
-    }
-});
-
+//vote
 router.get('/vote/:id', async (req, res) => {
     try {
         const promptData = await Prompt.findByPk(req.params.id);
@@ -58,7 +44,22 @@ router.get('/vote/:id', async (req, res) => {
         }
         const prompt = promptData.get({ plain : true });
         res.render('prompt', {prompt, loggedIn: req.session.loggedIn, user: req.user});
+      
+        console.log("req.user:", req.user);
+    } catch (error) {
+        console.error('Error fetching prompts:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
 
+//duel
+router.get('/duel', withAuth, async (req, res) => {
+    try {
+        res.render('duel', {
+            layout: 'main', // Specify the layout here
+            logged_in: req.session.logged_in,
+            user: req.user,
+        });
         console.log("req.user:", req.user);
     } catch (error) {
         console.error('Error fetching prompts:', error);
