@@ -1,5 +1,5 @@
 function voteP1(id, username){
-    const vote = {"username":username,"prompt_id":id,"player_vote":1};
+    const vote = {"username":"shrek","prompt_id":id,"player_vote":1};
     const response = fetch(`/api/vote`, {
         method: 'POST',
         body: JSON.stringify(vote),
@@ -14,7 +14,7 @@ function voteP1(id, username){
     }
 };
 function voteP2(id){
-    const vote = {"username":"bobby","prompt_id":id,"player_vote":2};
+    const vote = {"username":"shrek","prompt_id":id,"player_vote":2};
     const response = fetch(`/api/vote`, {
         method: 'POST',
         body: JSON.stringify(vote),
