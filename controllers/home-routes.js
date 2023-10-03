@@ -17,22 +17,21 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-//login
-router.get('/login', async (req, res) => {
-    console.log('hit login')
-    if(req.session.logged_in) {
-        
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+    res.render('login');
+  });
+
+router.get('/signup', (req, res) => {
+    if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
-
-    res.render('login');
-})
-
-//signup
-router.get('/signup', async (req, res) => {
     res.render('signup');
-})
+});
 
 //duel
 router.get('/duel', withAuth, async (req, res) => {
@@ -48,7 +47,5 @@ router.get('/duel', withAuth, async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-
-
 
 module.exports = router;
