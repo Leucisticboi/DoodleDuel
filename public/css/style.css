@@ -304,3 +304,16 @@ nav a:hover {
     transform: translateY(0);
   }
 }
+
+#asideP1 {
+  float: left;
+}
+
+#asideP2 {
+  float: right;
+}
+
+.versus {
+  float: center;
+  text-align: center;
+}

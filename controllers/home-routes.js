@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const Prompt = require('../models/Prompts');
 
 router.get('/', async (req, res) => {
     try {
@@ -19,7 +20,6 @@ router.get('/duel', async (req, res) => {
         res.render('duel', {
             layout: 'main', // Specify the layout here
             logged_in: req.session.logged_in,
-            user: req.user,
         });
         console.log("req.user:", req.user);
     } catch (error) {
@@ -42,6 +42,23 @@ router.get('/signup', (req, res) => {
         return;
     }
     res.render('signup');
+});
+
+router.get('/vote/:id', async (req, res) => {
+    try {
+        const promptData = await Prompt.findByPk(req.params.id);
+        if(!promptData) {
+            res.status(404).json({message: 'No dish with this id!'});
+            return;
+        }
+        const prompt = promptData.get({ plain : true });
+        res.render('prompt', {prompt, loggedIn: req.session.loggedIn, user: req.user});
+
+        console.log("req.user:", req.user);
+    } catch (error) {
+        console.error('Error fetching prompts:', error);
+        res.status(500).send('Internal Server Error');
+    }
 });
 
 module.exports = router;

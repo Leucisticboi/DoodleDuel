@@ -1,9 +1,8 @@
 <div>
-    <h1>{{text}}</h1>
-    {{#if !active}}
-    <h2>Who's Doodle wins?</h2>
+    <h2>{{prompt.text}}</h2>
+    <h3>Who's Doodle wins?</h3>
     <div>
-        <aside class="asideP1">
+        <aside id="asideP1">
             {{!-- idk how I'll grab the img yet below is a place holder--}}
             <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.morningkids.net%2Fcoloriages%2F889%2Fp%2Fcoloriage-doodle-jump-p-1.jpg&f=1&nofb=1&ipt=7ac2367ae3b0be843afe2147f59b276613e3528029cdad9d87ea5d717d3563eb&ipo=images">
             {{#if loggedIn}}
@@ -11,21 +10,21 @@
                 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn4.iconfinder.com%2Fdata%2Ficons%2Fvariety-of-arrows%2F32%2Farrows-19-128.png&f=1&nofb=1&ipt=e84ed613680fd1a7643620e2c91392d317ff11d84872de25adab0c3d3cb9746c&ipo=images">
             </button>
             {{else}}
-            <p>Log in to vote for {{p1_username}}!</p>
+            <p>Log in to vote for {{prompt.p1_username}}!</p>
             {{/if}}
         </aside>
-        <aside class="asideP2">
+        <main class="versus">
+            <h2 class="versus">VS</h2>
+        </main>
+        <aside id="asideP2">
             <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.morningkids.net%2Fcoloriages%2F889%2Fp%2Fcoloriage-doodle-jump-p-1.jpg&f=1&nofb=1&ipt=7ac2367ae3b0be843afe2147f59b276613e3528029cdad9d87ea5d717d3563eb&ipo=images">
             {{#if loggedIn}}
             <button id="voteP2Button" onclick="voteP2({{id}}, '{{user.username}}')">
                 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn4.iconfinder.com%2Fdata%2Ficons%2Fvariety-of-arrows%2F32%2Farrows-19-128.png&f=1&nofb=1&ipt=e84ed613680fd1a7643620e2c91392d317ff11d84872de25adab0c3d3cb9746c&ipo=images">
             </button>
             {{else}}
-            <p>Log in to vote for {{p2_username}}!</p>
+            <p>Log in to vote for {{prompt.p2_username}}!</p>
             {{/if}}
         </aside>
     </div>
-    {{else}}
-    <h3>... is still being completed :/</h3>
-    {{/if}}
 </div>
