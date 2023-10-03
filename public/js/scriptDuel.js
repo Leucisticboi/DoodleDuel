@@ -31,14 +31,17 @@ toolbar.addEventListener('change', e => {
 });
 
 const draw = (e) => {
-    if(!isPainting) {
+    if (!isPainting) {
         return;
     }
 
     ctx.lineWidth = lineWidth;
     ctx.lineCap = 'round';
 
-    ctx.lineTo(e.clientX - canvasOffsetX, e.clientY);
+    const mouseX = e.clientX - canvasOffsetX;
+    const mouseY = e.clientY - canvasOffsetY;
+
+    ctx.lineTo(mouseX, mouseY);
     ctx.stroke();
 }
 

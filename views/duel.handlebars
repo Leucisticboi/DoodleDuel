@@ -1,6 +1,13 @@
-<section class="container">
+<html>
+<head>
+    <link rel="stylesheet" href="/css/styleDuel.css" />
+    <audio id="scribbleAudio" src="scribble.mp3" preload="auto"></audio>
+</head>
+
+<body>
+    <section class="container">
         <div id="toolbar">
-            <h1>Doodle Duel</h1>
+            <h2>Doodle Duel</h2>
             <label for="stroke">Color</label>
             <input id="stroke" name='stroke' type="color">
             <label for="lineWidth">Width</label>
@@ -12,3 +19,12 @@
             <canvas id="drawing-board"></canvas>
         </div>
     </section>
+    <script src="/js/scriptDuel.js"></script>
+</body>
+<script>
+    function playScribbleSound() {
+        const scribbleAudio = document.getElementById('scribbleAudio');
+        scribbleAudio.play();
+    }
+</script>
+</html>

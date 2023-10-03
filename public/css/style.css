@@ -16,23 +16,50 @@ header {
   cursor: pointer;
 }
 
-#loginForm {
+#loginForm, #signupForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-top: 10px;
-  display: none;
 }
 
-#loginForm form {
-  text-align: right;
+#loginForm form, #signupForm form {
+  text-align: center;
+  width: 100%;
+}
+
+#signupForm form button,
+#loginForm form button {
+  margin: 10px auto;
+  padding: 5px;
+  width: 80%;
+  max-width: 200px;
+}
+
+#loginForm form label, 
+#signupForm form label {
+  display: block;
+}
+
+#signupForm form input[type="text"],
+#signupForm form input[type="email"],
+#signupForm form input[type="password"],
+#signupForm form button {
+  margin: 5px 0;
+  padding: 5px;
+  width: 80%;
+  max-width: 200px;
 }
 
 #loginForm form input[type="text"],
 #loginForm form input[type="password"],
 #loginForm form button {
-  display: block;
   margin: 5px 0;
   padding: 5px;
   width: 200px;
 }
+
 h1 {
   font-family: "Corben", cursive;
   font-size: 6rem;
@@ -230,6 +257,46 @@ h1 {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #15380a;
+  font-weight: bold;
+}
+
+#login-signup {
+  display: flex;
+}
+
+#login-btn, #signup-btn {
+  align-items: right;
+}
+
+#home-btn {
+  align-self: left;
+}
+
+nav li {
+  display: inline; 
+  margin-right: 20px; 
+}
+
+nav a {
+  color: #fff; 
+  padding: 10px 15px; 
+  transition: background-color 0.3s ease; 
+}
+
+nav a:hover {
+  background-color: #555; 
+  border-radius: 5px;
 }
 
 @keyframes fall {
