@@ -1,4 +1,4 @@
-# DoodleDuel
+# Doodle Duel
 
 ## Description
 Doodle Duel is a dynamic web application that fosters creativity and engagement through friendly drawing competitions. Users can easily create profiles and log in to participate in the excitement of dueling or voting on imaginative artwork.
@@ -7,6 +7,10 @@ Doodle Duel is a dynamic web application that fosters creativity and engagement 
 [Features](#features)
 
 [Usage](#usage)
+
+[Getting Started](#getting-started)
+
+[Deployed Application](#deployed-application)
 
 [License](#license)
 
@@ -29,12 +33,13 @@ Doodle Duel is a dynamic web application that fosters creativity and engagement 
 * A platform for creativity, where users can appreciate and rate the imaginative talents of their fellow participants.
 
 ## Getting Started
-To get started with Doodle Duel, follow these steps:
 
 
+## Deployed Application
+[Doodle Duel](https://doodle-duel-p2-32e9f10a2b67.herokuapp.com/)
 
 ## License
-
+MIT
 
 ## Contributions/References
 Special thanks to Javascriptacademy for help with the drawing tool. https://codepen.io/javascriptacademy-stash/pen/porpeoJ
