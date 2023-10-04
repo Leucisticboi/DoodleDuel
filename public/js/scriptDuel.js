@@ -82,6 +82,7 @@ saveButton.addEventListener('click', () => {
     })
     .then(blob => {
         console.log('Image saved on the server!');
+        window.location.href= '/';
     })
     .catch(error => console.error('Error:', error));
 });
