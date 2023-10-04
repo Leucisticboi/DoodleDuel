@@ -384,3 +384,8 @@ nav a:hover {
   float: center;
   text-align: center;
 }
+
+.pain {
+  display: flex;
+  justify-content: space-around;
+}
